@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa'
+import { SiZhihu, SiWechat } from "react-icons/si";
 import { IoSunnyOutline, IoMoonSharp } from 'react-icons/io5'
 import * as config from 'lib/config'
 
@@ -41,6 +42,30 @@ export const Footer: React.FC<{
       ) : null}
 
       <div className={styles.social}>
+        {config.wechat && (
+          <a
+            className={styles.wechat}
+            href={`/wechat-${config.wechat}.jpg`}
+            title={`Zhihu @${config.wechat}`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <SiWechat />
+          </a>
+        )}
+
+        {config.zhihu && (
+          <a
+            className={styles.zhihu}
+            href={`https://www.zhihu.com/people/${config.zhihu}`}
+            title={`Zhihu @${config.zhihu}`}
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <SiZhihu />
+          </a>
+        )}
+
         {config.twitter && (
           <a
             className={styles.twitter}
